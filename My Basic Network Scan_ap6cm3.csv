@@ -1,0 +1,2010 @@
+Plugin ID,CVE,CVSS v2.0 Base Score,Risk,Host,Protocol,Port,Name,Synopsis,Description,Solution,See Also,Plugin Output
+"10107","","","None","192.168.56.1","tcp","8080","HTTP Server Type and Version","A web server is running on the remote host.","This plugin attempts to determine the type and the version of the
+  remote web server.","n/a","","The remote web server type is :
+
+Jetty(12.0.17)"
+"10107","","","None","192.168.56.1","tcp","8834","HTTP Server Type and Version","A web server is running on the remote host.","This plugin attempts to determine the type and the version of the
+  remote web server.","n/a","","The remote web server type is :
+
+NessusWWW"
+"10147","","","None","192.168.56.1","tcp","8834","Nessus Server Detection","A Nessus daemon is listening on the remote port.","A Nessus daemon is listening on the remote port.","Ensure that the remote Nessus installation has been authorized.","https://www.tenable.com/products/nessus/nessus-professional","
+  URL     : https://DESKTOP-K9CJFTG:8834/
+  Version : unknown
+"
+"10150","","","None","192.168.56.1","tcp","445","Windows NetBIOS / SMB Remote Host Information Disclosure","It was possible to obtain the network name of the remote host.","The remote host is listening on UDP port 137 or TCP port 445, and
+replies to NetBIOS nbtscan or SMB requests.
+
+Note that this plugin gathers information to be used in other plugins,
+but does not itself generate a report.","n/a","","The following 2 NetBIOS names have been gathered :
+
+ DESKTOP-K9CJFTG  = Computer name
+ DESKTOP-K9CJFTG  = Workgroup / Domain name
+"
+"10302","","","None","192.168.56.1","tcp","8080","Web Server robots.txt Information Disclosure","The remote web server contains a 'robots.txt' file.","The remote host contains a file named 'robots.txt' that is intended to
+prevent web 'robots' from visiting certain directories in a website for
+maintenance or indexing purposes.  A malicious user may also be able to
+use the contents of this file to learn of sensitive documents or
+directories on the affected site and either retrieve them directly or
+target them for other attacks.","Review the contents of the site's robots.txt file, use Robots META tags
+instead of entries in the robots.txt file, and/or adjust the web
+server's access controls to limit access to sensitive material.","http://www.robotstxt.org/orig.html","Contents of robots.txt :
+
+# we don't want robots to click ""build"" links
+User-agent: *
+Disallow: /"
+"10736","","","None","192.168.56.1","tcp","135","DCE Services Enumeration","A DCE/RPC service is running on the remote host.","By sending a Lookup request to the portmapper (TCP 135 or epmapper
+PIPE) it was possible to enumerate the Distributed Computing
+Environment (DCE) services running on the remote port. Using this
+information it is possible to connect and bind to each service by
+sending an RPC request to the remote port/pipe.","n/a","","
+The following DCERPC services are available locally :
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : samss lpc
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : SidKey Local End Point
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : protected_storage
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : lsasspirpc
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : lsapolicylookup
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : LSA_EAS_ENDPOINT
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : LSA_IDPEXT_ENDPOINT
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : lsacap
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Local RPC service
+Named pipe : LSARPC_ENDPOINT
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 64d1d045-f675-460b-8a94-570246b36dab, version 1.0
+Description : Unknown RPC service
+Annotation : CLIPSVC Default RPC Interface
+Type : Local RPC service
+Named pipe : ClipServiceTransportEndpoint-00001
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : ae2dc901-312d-41df-8b79-e835e63db874, version 1.0
+Description : Unknown RPC service
+Annotation : appxsvc
+Type : Local RPC service
+Named pipe : LRPC-092597e85d2efbbf78
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : ff9fd3c4-742e-45e0-91dd-2f5bc632a1df, version 1.0
+Description : Unknown RPC service
+Annotation : appxsvc
+Type : Local RPC service
+Named pipe : LRPC-092597e85d2efbbf78
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : b04d3c44-f014-4530-88f3-ee7daa3e69b9, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-bfbbabd451dc2f3a58
+
+Object UUID : 6c637067-6569-746e-0000-000000000000
+UUID : c9ac6db5-82b7-4e55-ae8a-e464ed7b4277, version 1.0
+Description : Unknown RPC service
+Annotation : Impl friendly name
+Type : Local RPC service
+Named pipe : LRPC-34446d90e9b5428c60
+
+Object UUID : 24d1f7c7-76af-4f28-9ccd-7f6cb6468601
+UUID : 2eb08e3e-639f-4fba-97b1-14f878961076, version 1.0
+Description : Unknown RPC service
+Annotation : Group Policy RPC Interface
+Type : Local RPC service
+Named pipe : LRPC-2db32e7aea5e257325
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : cc105610-da03-467e-bc73-5b9e2937458d, version 1.0
+Description : Unknown RPC service
+Annotation : LiveIdSvc RPC Interface
+Type : Local RPC service
+Named pipe : LRPC-2c7ae92ed2e1ea7d96
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : faf2447b-b348-4feb-8dbe-beee5b7f7778, version 1.0
+Description : Unknown RPC service
+Annotation : OnlineProviderCert RPC Interface
+Type : Local RPC service
+Named pipe : LRPC-2c7ae92ed2e1ea7d96
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 572e35b4-1344-4565-96a1-f5df3bfa89bb, version 1.0
+Description : Unknown RPC service
+Annotation : LiveIdSvcNotify RPC Interface
+Type : Local RPC service
+Named pipe : liveidsvcnotify
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 8ef7c184-8dda-4b60-86dd-ad761105bcde, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE8431C7D4FC2A61A0971D8176F36A
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 8ef7c184-8dda-4b60-86dd-ad761105bcde, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : dell.hsaDDDCustomCapability_htrsf667h5kn2
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 44d1520b-6133-41f0-8a66-d37305ecc357, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-aa1f8ae6232d7c8c06
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : f5663d1c-7cd6-4109-9d01-2c187b75c38f, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-aa1f8ae6232d7c8c06
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 00000001-eaf3-4a7a-a0f2-bce4c30da77e, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE853FFF0670C5BC2C762B9774E53E
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 00000001-eaf3-4a7a-a0f2-bce4c30da77e, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : localhost
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : d2716e94-25cb-4820-bc15-537866578562, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE72B20712F087FF87832CE52B72A5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : d2716e94-25cb-4820-bc15-537866578562, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-c4a07afb2196323897
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0c53aa2e-fb1c-49c5-bfb6-c54f8e5857cd, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE72B20712F087FF87832CE52B72A5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0c53aa2e-fb1c-49c5-bfb6-c54f8e5857cd, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-c4a07afb2196323897
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 923c9623-db7f-4b34-9e6d-e86580f8ca2a, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE72B20712F087FF87832CE52B72A5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 923c9623-db7f-4b34-9e6d-e86580f8ca2a, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-c4a07afb2196323897
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : e8748f69-a2a4-40df-9366-62dbeb696e26, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE72B20712F087FF87832CE52B72A5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : e8748f69-a2a4-40df-9366-62dbeb696e26, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-c4a07afb2196323897
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c8ba73d2-3d55-429c-8e9a-c44f006f69fc, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE72B20712F087FF87832CE52B72A5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c8ba73d2-3d55-429c-8e9a-c44f006f69fc, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-c4a07afb2196323897
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 43890c94-bfd7-4655-ad6a-b4a68397cdcb, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE72B20712F087FF87832CE52B72A5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 43890c94-bfd7-4655-ad6a-b4a68397cdcb, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-c4a07afb2196323897
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0a533b58-0ed9-4085-b6e8-95795e147972, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE4F81DEB3A69D21553727DC826D2A
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0a533b58-0ed9-4085-b6e8-95795e147972, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-e37cab42e8185acb3a
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 5dea026d-f999-40b1-a234-2164fd086783, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE4F81DEB3A69D21553727DC826D2A
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 5dea026d-f999-40b1-a234-2164fd086783, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-e37cab42e8185acb3a
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 5dea026d-f999-40b1-a234-2164fd086783, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-71e0d60e3dcf8909a5
+
+Object UUID : fccae962-4722-40c7-a46d-fe5153280723
+UUID : d09bdeb5-6171-4a34-bfe2-06fa82652568, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE4F81DEB3A69D21553727DC826D2A
+
+Object UUID : fccae962-4722-40c7-a46d-fe5153280723
+UUID : d09bdeb5-6171-4a34-bfe2-06fa82652568, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-e37cab42e8185acb3a
+
+Object UUID : fccae962-4722-40c7-a46d-fe5153280723
+UUID : d09bdeb5-6171-4a34-bfe2-06fa82652568, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-71e0d60e3dcf8909a5
+
+Object UUID : fccae962-4722-40c7-a46d-fe5153280723
+UUID : d09bdeb5-6171-4a34-bfe2-06fa82652568, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-fd99ec23a05b40be89
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2acb9d68-b434-4b3e-b966-e06b4b3a84cb, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE4F81DEB3A69D21553727DC826D2A
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2acb9d68-b434-4b3e-b966-e06b4b3a84cb, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-e37cab42e8185acb3a
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2acb9d68-b434-4b3e-b966-e06b4b3a84cb, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-71e0d60e3dcf8909a5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2acb9d68-b434-4b3e-b966-e06b4b3a84cb, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-fd99ec23a05b40be89
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2acb9d68-b434-4b3e-b966-e06b4b3a84cb, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-2920ca889e04b5b0a1
+
+Object UUID : ccb8aa07-7225-4ea0-8501-4b3c1b1acd43
+UUID : d09bdeb5-6171-4a34-bfe2-06fa82652568, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE228E8A5C620D883360BAD84F57BA
+
+Object UUID : ccb8aa07-7225-4ea0-8501-4b3c1b1acd43
+UUID : d09bdeb5-6171-4a34-bfe2-06fa82652568, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-dd2f2d303870e3a04a
+
+Object UUID : 582a47b2-bcd8-4d3c-8acb-fe09d5bd6eec
+UUID : d09bdeb5-6171-4a34-bfe2-06fa82652568, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE228E8A5C620D883360BAD84F57BA
+
+Object UUID : 582a47b2-bcd8-4d3c-8acb-fe09d5bd6eec
+UUID : d09bdeb5-6171-4a34-bfe2-06fa82652568, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-dd2f2d303870e3a04a
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : e0290363-7e94-4ed4-abc2-2c867892c99f, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE1DFF2A9D41246DF1EECEB1E94B2C
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : e0290363-7e94-4ed4-abc2-2c867892c99f, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-295549ce22b3b401c2
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : a4b8d482-80ce-40d6-934d-b22a01a44fe7, version 1.0
+Description : Unknown RPC service
+Annotation : LicenseManager
+Type : Local RPC service
+Named pipe : LicenseServiceEndpoint
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 06bba54a-be05-49f9-b0a0-30f790261023, version 1.0
+Description : Unknown RPC service
+Annotation : Security Center
+Type : Local RPC service
+Named pipe : OLE5BA90D38E641D238E02D126DA031
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 06bba54a-be05-49f9-b0a0-30f790261023, version 1.0
+Description : Unknown RPC service
+Annotation : Security Center
+Type : Local RPC service
+Named pipe : LRPC-7f31634eae03b18550
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 650a7e26-eab8-5533-ce43-9c1dfce11511, version 1.0
+Description : Unknown RPC service
+Annotation : Vpn APIs
+Type : Local RPC service
+Named pipe : RasmanLrpc
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 650a7e26-eab8-5533-ce43-9c1dfce11511, version 1.0
+Description : Unknown RPC service
+Annotation : Vpn APIs
+Type : Local RPC service
+Named pipe : VpnikeRpc
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 650a7e26-eab8-5533-ce43-9c1dfce11511, version 1.0
+Description : Unknown RPC service
+Annotation : Vpn APIs
+Type : Local RPC service
+Named pipe : LRPC-f73b446d8a449742f9
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2f5f6521-cb55-1059-b446-00df0bce31db, version 1.0
+Description : Telephony service
+Windows process : svchost.exe
+Annotation : Unimodem LRPC Endpoint
+Type : Local RPC service
+Named pipe : tapsrvlpc
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2f5f6521-cb55-1059-b446-00df0bce31db, version 1.0
+Description : Telephony service
+Windows process : svchost.exe
+Annotation : Unimodem LRPC Endpoint
+Type : Local RPC service
+Named pipe : unimdmsvc
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c503f532-443a-4c69-8300-ccd1fbdb3839, version 2.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE3DBE4CF0D3252356501AD309F1CF
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c503f532-443a-4c69-8300-ccd1fbdb3839, version 2.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-85de49d73572aa4739
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 4b112204-0e19-11d3-b42b-0000f81feb9f, version 1.0
+Description : SSDP service
+Windows process : unknow
+Type : Local RPC service
+Named pipe : LRPC-005cf809026766c265
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0767a036-0d22-48aa-ba69-b619480f38cb, version 1.0
+Description : Unknown RPC service
+Annotation : PcaSvc
+Type : Local RPC service
+Named pipe : LRPC-18de5dee901f9e29d4
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 26268c86-e770-433e-86ef-5f3ba6731fba, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLED85A99C7CBA8F1FDB7FAACCE5DB0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 26268c86-e770-433e-86ef-5f3ba6731fba, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-900d8def01cdd02e08
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c27f3c08-92ba-478c-b446-b419c4cef0e2, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-ee9ac4cb1d5a97cff8
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : ee618e36-3c88-4fc3-82ea-1f20b120198b, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE93BCD27DE6AC3B6BF89058434F7F
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 81be8b70-cf26-425b-ab9d-921efba40509, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE93BCD27DE6AC3B6BF89058434F7F
+
+Object UUID : 00000001-0000-0000-0000-000000000000
+UUID : 8ec21e98-b5ce-4916-a3d6-449fa428a007, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLEB6E846073FE2C40C9A31FB3AB13A
+
+Object UUID : 00000001-0000-0000-0000-000000000000
+UUID : 8ec21e98-b5ce-4916-a3d6-449fa428a007, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-bb258f6f2c6b2c4c0a
+
+Object UUID : 00000001-0000-0000-0000-000000000000
+UUID : 0fc77b1a-95d8-4a2e-a0c0-cff54237462b, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLEB6E846073FE2C40C9A31FB3AB13A
+
+Object UUID : 00000001-0000-0000-0000-000000000000
+UUID : 0fc77b1a-95d8-4a2e-a0c0-cff54237462b, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-bb258f6f2c6b2c4c0a
+
+Object UUID : 00000001-0000-0000-0000-000000000000
+UUID : b1ef227e-dfa5-421e-82bb-67a6a129c496, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLEB6E846073FE2C40C9A31FB3AB13A
+
+Object UUID : 00000001-0000-0000-0000-000000000000
+UUID : b1ef227e-dfa5-421e-82bb-67a6a129c496, version 0.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-bb258f6f2c6b2c4c0a
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0497b57d-2e66-424f-a0c6-157cd5d41700, version 1.0
+Description : Unknown RPC service
+Annotation : AppInfo
+Type : Local RPC service
+Named pipe : LRPC-030b3b53190b54984d
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 201ef99a-7fa0-444c-9399-19ba84f12a1a, version 1.0
+Description : Unknown RPC service
+Annotation : AppInfo
+Type : Local RPC service
+Named pipe : LRPC-030b3b53190b54984d
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 5f54ce7d-5b79-4175-8584-cb65313a0e98, version 1.0
+Description : Unknown RPC service
+Annotation : AppInfo
+Type : Local RPC service
+Named pipe : LRPC-030b3b53190b54984d
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : fd7a0523-dc70-43dd-9b2e-9c5ed48225b1, version 1.0
+Description : Unknown RPC service
+Annotation : AppInfo
+Type : Local RPC service
+Named pipe : LRPC-030b3b53190b54984d
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 58e604e8-9adb-4d2e-a464-3b0683fb1480, version 1.0
+Description : Unknown RPC service
+Annotation : AppInfo
+Type : Local RPC service
+Named pipe : LRPC-030b3b53190b54984d
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0f738e20-73c0-4ca8-aa6a-8dfef545fea8, version 1.0
+Description : Unknown RPC service
+Annotation : AppInfo
+Type : Local RPC service
+Named pipe : LRPC-030b3b53190b54984d
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 7df1ceae-de4e-4e6f-ab14-49636e7c2052, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-241f97632233b57366
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : d4051bde-9cdd-4910-b393-4aa85ec3c482, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE31A1D08D9CE9149905E9827ADFD0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : d4051bde-9cdd-4910-b393-4aa85ec3c482, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-a6c43b5c01770603b5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 4c9dbf19-d39e-4bb9-90ee-8f7179b20283, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE31A1D08D9CE9149905E9827ADFD0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 4c9dbf19-d39e-4bb9-90ee-8f7179b20283, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-a6c43b5c01770603b5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : fd8be72b-a9cd-4b2c-a9ca-4ded242fbe4d, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE31A1D08D9CE9149905E9827ADFD0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : fd8be72b-a9cd-4b2c-a9ca-4ded242fbe4d, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-a6c43b5c01770603b5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 95095ec8-32ea-4eb0-a3e2-041f97b36168, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE31A1D08D9CE9149905E9827ADFD0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 95095ec8-32ea-4eb0-a3e2-041f97b36168, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-a6c43b5c01770603b5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : e38f5360-8572-473e-b696-1b46873beeab, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE31A1D08D9CE9149905E9827ADFD0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : e38f5360-8572-473e-b696-1b46873beeab, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-a6c43b5c01770603b5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : d22895ef-aff4-42c5-a5b2-b14466d34ab4, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE31A1D08D9CE9149905E9827ADFD0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : d22895ef-aff4-42c5-a5b2-b14466d34ab4, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-a6c43b5c01770603b5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 98cd761e-e77d-41c8-a3c0-0fb756d90ec2, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE31A1D08D9CE9149905E9827ADFD0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 98cd761e-e77d-41c8-a3c0-0fb756d90ec2, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-a6c43b5c01770603b5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 1d45e083-478f-437c-9618-3594ced8c235, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : OLE31A1D08D9CE9149905E9827ADFD0
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 1d45e083-478f-437c-9618-3594ced8c235, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-a6c43b5c01770603b5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 714dc5c4-c5f6-466a-b037-a573c958031e, version 1.0
+Description : Unknown RPC service
+Annotation : ProcessTag Server Endpoint
+Type : Local RPC service
+Named pipe : OLE056F673A6DC919B055FE23B4D4B8
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 714dc5c4-c5f6-466a-b037-a573c958031e, version 1.0
+Description : Unknown RPC service
+Annotation : ProcessTag Server Endpoint
+Type : Local RPC service
+Named pipe : LRPC-97e39f5eef6876c59e
+
+Object UUID : 49541cea-a719-4e75-8d58-a3a7bfff960e
+UUID : 850cee52-3038-4277-b9b4-e05db8b2c35c, version 1.0
+Description : Unknown RPC service
+Annotation : Device Association Framework Association RPC Interface
+Type : Local RPC service
+Named pipe : LRPC-02db147d8fb6ec8102
+
+Object UUID : 80b4038a-1d09-4c05-b1b6-249a4c2e0736
+UUID : a1d4eae7-39f8-4bca-8e72-832767f5082a, version 1.0
+Description : Unknown RPC service
+Annotation : Device Association Framework Inbound RPC Interface
+Type : Local RPC service
+Named pipe : LRPC-02db147d8fb6ec8102
+
+Object UUID : 145857ef-d848-4a7e-b544-c1984d26cf05
+UUID : 2e7d4935-59d2-4312-a2c8-41900aa5495f, version 1.0
+Description : Unknown RPC service
+Annotation : Device Association Framework Challenge RPC Interface
+Type : Local RPC service
+Named pipe : LRPC-02db147d8fb6ec8102
+
+Object UUID : 289e5e0f-414a-4de9-8d17-244507fffc07
+UUID : bd84cd86-9825-4376-813d-334c543f89b1, version 1.0
+Description : Unknown RPC service
+Annotation : Device Association Framework Query RPC Interface
+Type : Local RPC service
+Named pipe : LRPC-02db147d8fb6ec8102
+
+Object UUID : 1475c123-1193-4379-81ac-302c4383421d
+UUID : 5b665b9a-a086-4e26-ae24-96ab050b0ec3, version 1.0
+Description : Unknown RPC service
+Annotation : Device Association Framework AEP Store Access RPC Interface
+Type : Local RPC service
+Named pipe : LRPC-02db147d8fb6ec8102
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 78dcce84-7f13-4139-b8cd-ef222aa0408b, version 1.0
+Description : Unknown RPC service
+Annotation : StateRepository
+Type : Local RPC service
+Named pipe : OLE21F1023039CDCE393AB194F7195E
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 78dcce84-7f13-4139-b8cd-ef222aa0408b, version 1.0
+Description : Unknown RPC service
+Annotation : StateRepository
+Type : Local RPC service
+Named pipe : LRPC-f817272dc0850d70ea
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 98716d03-89ac-44c7-bb8c-285824e51c4a, version 1.0
+Description : Unknown RPC service
+Annotation : XactSrv service
+Type : Local RPC service
+Named pipe : LRPC-99e6cbd89e761a8ce9
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 1a0d010f-1c33-432c-b0f5-8cf4e8053099, version 1.0
+Description : Unknown RPC service
+Annotation : IdSegSrv service
+Type : Local RPC service
+Named pipe : LRPC-99e6cbd89e761a8ce9
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 552d076a-cb29-4e44-8b6a-d15e59e2c0af, version 1.0
+Description : Unknown RPC service
+Annotation : IP Transition Configuration endpoint
+Type : Local RPC service
+Named pipe : LRPC-c31575606f31f61ce4
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2e6035b2-e8f1-41a7-a044-656b439c4c34, version 1.0
+Description : Unknown RPC service
+Annotation : Proxy Manager provider server endpoint
+Type : Local RPC service
+Named pipe : LRPC-c31575606f31f61ce4
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2e6035b2-e8f1-41a7-a044-656b439c4c34, version 1.0
+Description : Unknown RPC service
+Annotation : Proxy Manager provider server endpoint
+Type : Local RPC service
+Named pipe : TeredoDiagnostics
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2e6035b2-e8f1-41a7-a044-656b439c4c34, version 1.0
+Description : Unknown RPC service
+Annotation : Proxy Manager provider server endpoint
+Type : Local RPC service
+Named pipe : TeredoControl
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c36be077-e14b-4fe9-8abc-e856ef4f048b, version 1.0
+Description : Unknown RPC service
+Annotation : Proxy Manager client server endpoint
+Type : Local RPC service
+Named pipe : LRPC-c31575606f31f61ce4
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c36be077-e14b-4fe9-8abc-e856ef4f048b, version 1.0
+Description : Unknown RPC service
+Annotation : Proxy Manager client server endpoint
+Type : Local RPC service
+Named pipe : TeredoDiagnostics
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c36be077-e14b-4fe9-8abc-e856ef4f048b, version 1.0
+Description : Unknown RPC service
+Annotation : Proxy Manager client server endpoint
+Type : Local RPC service
+Named pipe : TeredoControl
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c49a5a70-8a7f-4e70-ba16-1e8f1f193ef1, version 1.0
+Description : Unknown RPC service
+Annotation : Adh APIs
+Type : Local RPC service
+Named pipe : LRPC-c31575606f31f61ce4
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c49a5a70-8a7f-4e70-ba16-1e8f1f193ef1, version 1.0
+Description : Unknown RPC service
+Annotation : Adh APIs
+Type : Local RPC service
+Named pipe : TeredoDiagnostics
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c49a5a70-8a7f-4e70-ba16-1e8f1f193ef1, version 1.0
+Description : Unknown RPC service
+Annotation : Adh APIs
+Type : Local RPC service
+Named pipe : TeredoControl
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : c49a5a70-8a7f-4e70-ba16-1e8f1f193ef1, version 1.0
+Description : Unknown RPC service
+Annotation : Adh APIs
+Type : Local RPC service
+Named pipe : OLE0B9C1893DBB286950F0D1424854A
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : a398e520-d59a-4bdd-aa7a-3c1e0303a511, version 1.0
+Description : Unknown RPC service
+Annotation : IKE/Authip API
+Type : Local RPC service
+Named pipe : LRPC-d7215ac47e920f6a91
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 4a6735ea-5a8b-4877-b665-df95c22dbd21, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : MaxxAudioPro
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 94f974af-f072-4e68-85c9-d265b55306fe, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : RstMgmtRpcEndpoint
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 7635805d-a473-451a-94b2-5d674d953d39, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : RstMgmtRpcEndpoint
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0f96ee82-4639-4ed6-888d-8af68287c0a9, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : RstMgmtRpcEndpoint
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : f2c9b409-c1c9-4100-8639-d8ab1486694a, version 1.0
+Description : Unknown RPC service
+Annotation : Witness Client Upcall Server
+Type : Local RPC service
+Named pipe : LRPC-a11e3796869f12302a
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : eb081a0d-10ee-478a-a1dd-50995283e7a8, version 3.0
+Description : Unknown RPC service
+Annotation : Witness Client Test Interface
+Type : Local RPC service
+Named pipe : LRPC-a11e3796869f12302a
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 7f1343fe-50a9-4927-a778-0c5859517bac, version 1.0
+Description : Unknown RPC service
+Annotation : DfsDs service
+Type : Local RPC service
+Named pipe : LRPC-a11e3796869f12302a
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : e64b9aee-f372-4312-9a14-8f1502b5c8e3, version 1.0
+Description : Unknown RPC service
+Type : Local RPC service
+Named pipe : LRPC-c205dd766e7ab4edc8
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : dd490425-5325-4565-b774-7e27d6c09c24, version 1.0
+Description : Unknown RPC service
+Annotation : Base Firewall Engine API
+Type : Local RPC service
+Named pipe : LRPC-7e6cdc67159536e8e5
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 7f9d11bf-7fb9-436b-a812-b2d50c5d4c03, version 1.0
+Description : Unknown RPC service
+Annotation : Fw APIs
+Type : Local RPC service
+Named pipe : LRPC-7e6cdc67159536e8e5
+
+Ob"
+"10736","","","None","192.168.56.1","tcp","445","DCE Services Enumeration","A DCE/RPC service is running on the remote host.","By sending a Lookup request to the portmapper (TCP 135 or epmapper
+PIPE) it was possible to enumerate the Distributed Computing
+Environment (DCE) services running on the remote port. Using this
+information it is possible to connect and bind to each service by
+sending an RPC request to the remote port/pipe.","n/a","","
+The following DCERPC services are available remotely :
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 650a7e26-eab8-5533-ce43-9c1dfce11511, version 1.0
+Description : Unknown RPC service
+Annotation : Vpn APIs
+Type : Remote RPC service
+Named pipe : \PIPE\ROUTER
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 2f5f6521-cb55-1059-b446-00df0bce31db, version 1.0
+Description : Telephony service
+Windows process : svchost.exe
+Annotation : Unimodem LRPC Endpoint
+Type : Remote RPC service
+Named pipe : \pipe\tapsrv
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 7f1343fe-50a9-4927-a778-0c5859517bac, version 1.0
+Description : Unknown RPC service
+Annotation : DfsDs service
+Type : Remote RPC service
+Named pipe : \PIPE\wkssvc
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : f6beaff7-1e19-4fbb-9f8f-b89e2018337c, version 1.0
+Description : Unknown RPC service
+Annotation : Windows Event Log
+Type : Remote RPC service
+Named pipe : \pipe\eventlog
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 1ff70682-0a51-30e8-076d-740be8cee98b, version 1.0
+Description : Scheduler Service
+Windows process : svchost.exe
+Type : Remote RPC service
+Named pipe : \PIPE\atsvc
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 378e52b0-c0a9-11cf-822d-00aa0051e40f, version 1.0
+Description : Scheduler Service
+Windows process : svchost.exe
+Type : Remote RPC service
+Named pipe : \PIPE\atsvc
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 33d84484-3626-47ee-8c6f-e7e98b113be1, version 2.0
+Description : Unknown RPC service
+Type : Remote RPC service
+Named pipe : \PIPE\atsvc
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 86d35949-83c9-4044-b424-db363231fd0c, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+Named pipe : \PIPE\atsvc
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 3a9ef155-691d-4449-8d05-09ad57031823, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+Named pipe : \PIPE\atsvc
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : b08669ee-8cb5-43a5-a017-84fe00000000
+UUID : 76f226c3-ec14-4325-8a99-6a46348418af, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+Named pipe : \PIPE\InitShutdown
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 765294ba-60bc-48b8-92e9-89fd77769d91
+UUID : d95afe70-a6d5-4259-822e-2c84da1ddb0d, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+Named pipe : \PIPE\InitShutdown
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 12345778-1234-abcd-ef00-0123456789ac, version 1.0
+Description : Security Account Manager
+Windows process : lsass.exe
+Type : Remote RPC service
+Named pipe : \pipe\lsass
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86, version 2.0
+Description : Unknown RPC service
+Annotation : KeyIso
+Type : Remote RPC service
+Named pipe : \pipe\lsass
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Remote RPC service
+Named pipe : \pipe\lsass
+Netbios name : \\DESKTOP-K9CJFTG
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Remote RPC service
+Named pipe : \pipe\lsass
+Netbios name : \\DESKTOP-K9CJFTG
+
+"
+"10736","","","None","192.168.56.1","tcp","49664","DCE Services Enumeration","A DCE/RPC service is running on the remote host.","By sending a Lookup request to the portmapper (TCP 135 or epmapper
+PIPE) it was possible to enumerate the Distributed Computing
+Environment (DCE) services running on the remote port. Using this
+information it is possible to connect and bind to each service by
+sending an RPC request to the remote port/pipe.","n/a","","
+The following DCERPC services are available on TCP port 49664 :
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Remote RPC service
+TCP Port : 49664
+IP : 192.168.56.1
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 12345778-1234-abcd-ef00-0123456789ac, version 1.0
+Description : Security Account Manager
+Windows process : lsass.exe
+Type : Remote RPC service
+TCP Port : 49664
+IP : 192.168.56.1
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86, version 2.0
+Description : Unknown RPC service
+Annotation : KeyIso
+Type : Remote RPC service
+TCP Port : 49664
+IP : 192.168.56.1
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b, version 1.0
+Description : Unknown RPC service
+Annotation : Ngc Pop Key Service
+Type : Remote RPC service
+TCP Port : 49664
+IP : 192.168.56.1
+
+"
+"10736","","","None","192.168.56.1","tcp","49665","DCE Services Enumeration","A DCE/RPC service is running on the remote host.","By sending a Lookup request to the portmapper (TCP 135 or epmapper
+PIPE) it was possible to enumerate the Distributed Computing
+Environment (DCE) services running on the remote port. Using this
+information it is possible to connect and bind to each service by
+sending an RPC request to the remote port/pipe.","n/a","","
+The following DCERPC services are available on TCP port 49665 :
+
+Object UUID : 765294ba-60bc-48b8-92e9-89fd77769d91
+UUID : d95afe70-a6d5-4259-822e-2c84da1ddb0d, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+TCP Port : 49665
+IP : 192.168.56.1
+
+"
+"10736","","","None","192.168.56.1","tcp","49668","DCE Services Enumeration","A DCE/RPC service is running on the remote host.","By sending a Lookup request to the portmapper (TCP 135 or epmapper
+PIPE) it was possible to enumerate the Distributed Computing
+Environment (DCE) services running on the remote port. Using this
+information it is possible to connect and bind to each service by
+sending an RPC request to the remote port/pipe.","n/a","","
+The following DCERPC services are available on TCP port 49668 :
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 86d35949-83c9-4044-b424-db363231fd0c, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+TCP Port : 49668
+IP : 192.168.56.1
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 3a9ef155-691d-4449-8d05-09ad57031823, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+TCP Port : 49668
+IP : 192.168.56.1
+
+"
+"10736","","","None","192.168.56.1","tcp","49669","DCE Services Enumeration","A DCE/RPC service is running on the remote host.","By sending a Lookup request to the portmapper (TCP 135 or epmapper
+PIPE) it was possible to enumerate the Distributed Computing
+Environment (DCE) services running on the remote port. Using this
+information it is possible to connect and bind to each service by
+sending an RPC request to the remote port/pipe.","n/a","","
+The following DCERPC services are available on TCP port 49669 :
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : f6beaff7-1e19-4fbb-9f8f-b89e2018337c, version 1.0
+Description : Unknown RPC service
+Annotation : Windows Event Log
+Type : Remote RPC service
+TCP Port : 49669
+IP : 192.168.56.1
+
+"
+"10736","","","None","192.168.56.1","tcp","49672","DCE Services Enumeration","A DCE/RPC service is running on the remote host.","By sending a Lookup request to the portmapper (TCP 135 or epmapper
+PIPE) it was possible to enumerate the Distributed Computing
+Environment (DCE) services running on the remote port. Using this
+information it is possible to connect and bind to each service by
+sending an RPC request to the remote port/pipe.","n/a","","
+The following DCERPC services are available on TCP port 49672 :
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 12345678-1234-abcd-ef00-0123456789ab, version 1.0
+Description : IPsec Services (Windows XP & 2003)
+Windows process : lsass.exe
+Type : Remote RPC service
+TCP Port : 49672
+IP : 192.168.56.1
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 0b6edbfa-4a24-4fc6-8a23-942b1eca65d1, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+TCP Port : 49672
+IP : 192.168.56.1
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : ae33069b-a2a8-46ee-a235-ddfd339be281, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+TCP Port : 49672
+IP : 192.168.56.1
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 4a452661-8290-4b36-8fbe-7f4093a94978, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+TCP Port : 49672
+IP : 192.168.56.1
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 76f03f96-cdfd-44fc-a22c-64950a001209, version 1.0
+Description : Unknown RPC service
+Type : Remote RPC service
+TCP Port : 49672
+IP : 192.168.56.1
+
+"
+"10736","","","None","192.168.56.1","tcp","49676","DCE Services Enumeration","A DCE/RPC service is running on the remote host.","By sending a Lookup request to the portmapper (TCP 135 or epmapper
+PIPE) it was possible to enumerate the Distributed Computing
+Environment (DCE) services running on the remote port. Using this
+information it is possible to connect and bind to each service by
+sending an RPC request to the remote port/pipe.","n/a","","
+The following DCERPC services are available on TCP port 49676 :
+
+Object UUID : 00000000-0000-0000-0000-000000000000
+UUID : 367abb81-9844-35f1-ad32-98f038001003, version 2.0
+Description : Service Control Manager
+Windows process : svchost.exe
+Type : Remote RPC service
+TCP Port : 49676
+IP : 192.168.56.1
+
+"
+"10785","","","None","192.168.56.1","tcp","445","Microsoft Windows SMB NativeLanManager Remote System Information Disclosure","It was possible to obtain information about the remote operating
+system.","Nessus was able to obtain the remote operating system name and version
+(Windows and/or Samba) by sending an authentication request to port
+139 or 445. Note that this plugin requires SMB to be enabled on the
+host.","n/a","","Nessus was able to obtain the following information about the host, by 
+parsing the SMB2 Protocol's NTLM SSP message:
+
+	Target Name: DESKTOP-K9CJFTG
+	NetBIOS Domain Name: DESKTOP-K9CJFTG
+	NetBIOS Computer Name: DESKTOP-K9CJFTG
+	DNS Domain Name: DESKTOP-K9CJFTG
+	DNS Computer Name: DESKTOP-K9CJFTG
+	DNS Tree Name: unknown
+	Product Version: 10.0.22621
+"
+"10863","","","None","192.168.56.1","tcp","8834","SSL Certificate Information","This plugin displays the SSL certificate.","This plugin connects to every SSL-related port and attempts to 
+extract and dump the X.509 certificate.","n/a","","Subject Name: 
+
+Organization: Nessus Users United
+Organization Unit: Nessus Server
+Locality: New York
+Country: US
+State/Province: NY
+Common Name: DESKTOP-K9CJFTG
+
+Issuer Name: 
+
+Organization: Nessus Users United
+Organization Unit: Nessus Certification Authority
+Locality: New York
+Country: US
+State/Province: NY
+Common Name: Nessus Certification Authority
+
+Serial Number: 2F 3F 
+
+Version: 3
+
+Signature Algorithm: SHA-256 With RSA Encryption
+
+Not Valid Before: Jun 26 14:36:53 2025 GMT
+Not Valid After: Jun 25 14:36:53 2029 GMT
+
+Public Key Info: 
+
+Algorithm: RSA Encryption
+Key Length: 2048 bits
+Public Key: 00 B9 AB 2E 7F 8B 33 4C 61 70 C9 7A 17 E9 CF 28 0E 9C C2 58 
+            FB 77 8B CF DC 48 63 E9 A7 C3 70 55 5D 90 95 92 C7 44 D4 DA 
+            1E 8D 0B C6 1D CD CA 4B 1F 4C 10 22 F7 A4 93 85 1D A1 20 24 
+            A2 02 30 8F CA 39 CD C6 3A F3 05 2E C4 7C 3F 71 9D 93 E7 C9 
+            B3 F8 C2 D9 71 DD 0E 48 AC 20 C0 B2 F9 AB 9C E0 39 BF BF 9E 
+            5F FB AB 64 7B 5B F5 D2 6C C4 75 39 83 3A ED D4 E6 64 AB 3A 
+            43 21 1F 80 E9 53 A7 96 A9 3D 84 CD E4 1F 32 04 7B B4 03 CC 
+            E2 9E 4D 47 13 C6 3F F7 FB C3 E6 2B B6 D4 23 CD EF 5A BD 0E 
+            F4 60 C1 C6 8C BA BE 53 E3 52 25 4D EB D2 E3 79 1F 6A 75 17 
+            75 7D 1C C3 CB 85 8B 2A 1F F8 89 2C 02 77 02 25 54 D4 CD 17 
+            E7 BC 08 6D D2 1C 44 16 8A B2 F9 10 41 E6 4D B9 4D DD 20 00 
+            36 05 7E 73 2B C2 F6 60 50 3F 1D 2B 2E 62 8F E0 4C C4 1D 92 
+            54 F3 45 21 36 73 0E 96 FC 7D 63 B1 0B 66 94 8E DF 
+Exponent: 01 00 01 
+
+Signature Length: 256 bytes / 2048 bits
+Signature: 00 6E 30 1F BC D4 32 0C 86 A2 F7 B1 81 91 C6 30 F2 25 4A 8D 
+           C9 CD 01 F2 66 3D 40 B7 CC DB FC 69 36 D9 6D 91 CE B6 31 75 
+           CE C5 44 5F 96 BB 79 6A 10 15 11 20 5B B1 1D 82 4D EF 40 15 
+           07 BC F1 61 BD 48 25 A3 89 EC A1 38 BD DC 49 F6 7F 83 B5 C2 
+           F2 10 34 CB FA C0 8A 52 79 AD 63 7A A6 12 0B E2 75 C0 60 F1 
+           AF F9 66 80 A9 2D 29 1B AF 4D 1B 3B EA 05 F9 5E 10 FE A8 07 
+           1F 59 95 4D 83 10 36 B4 4D C2 32 50 48 83 02 02 2F 2D ED 9E 
+           38 15 56 86 AE E6 6C B4 44 7E AE 25 01 5F DB 23 21 52 B3 E9 
+           68 26 6F E6 E1 F2 5E 0F 58 9F 48 7C 9A 33 7B 9B D7 3F D4 3C 
+           9B D0 88 6D 37 A8 79 AE DC E9 D6 65 D0 92 EF 83 A0 BA D5 C4 
+           20 59 F6 47 FA 08 74 BA C0 8C DB A9 A3 6D ED FD 4E 77 7C AA 
+           0C F2 3D CB 2C 66 DC A9 61 F6 0F 1A 58 F4 AE 53 60 CD 8A 54 
+           BD F3 B8 47 2E C1 B8 B1 BC 89 6B 97 6A CE 4A 14 C0 
+
+Extension: 2.16.840.1.113730.1.1
+Critical: 0
+Data: 03 02 06 40 
+
+
+Extension: Key Usage(2.5.29.15)
+Critical: 1
+Key Usage: Digital Signature, Non Repudiation, Key Encipherment
+
+
+Extension: Subject Key Identifier(2.5.29.14)
+Critical: 0
+Subject Key Identifier: 93 1F 4B FF BB E0 48 70 CB 8A BA CE B2 69 AE D5 9F 31 58 2D 
+
+
+Extension: Authority Key Identifier(2.5.29.35)
+Critical: 0
+Key Identifier: B0 24 74 1D 56 71 1C CB 22 D0 A0 97 E4 6D 13 1C F8 CB AD 42 
+
+
+Extension: Extended Key Usage(2.5.29.37)
+Critical: 0
+Purpose#1: Web Server Authentication (1.3.6.1.5.5.7.3.1)
+
+
+Fingerprints : 
+
+SHA-256 Fingerprint: 8D 07 5F 40 EC 84 10 54 8C B0 BE AB A0 9A 23 6F 3B A8 5F 05 
+                     AA 6D 60 DE 4A FD B3 C1 30 6D 38 5A 
+SHA-1 Fingerprint: 5D 88 65 CD F1 13 DF E0 40 B0 CD A7 1B 8E 28 2F C5 04 F2 08 
+MD5 Fingerprint: 55 45 75 BC 80 26 E1 15 EF A1 55 C8 29 45 E5 33 
+
+
+PEM certificate : 
+
+-----BEGIN CERTIFICATE-----
+MIIEETCCAvmgAwIBAgICLz8wDQYJKoZIhvcNAQELBQAwgZ0xHDAaBgNVBAoME05lc3N1cyBVc2VycyBVbml0ZWQxJzAlBgNVBAsMHk5lc3N1cyBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTERMA8GA1UEBwwITmV3IFlvcmsxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJOWTEnMCUGA1UEAwweTmVzc3VzIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTI1MDYyNjE0MzY1M1oXDTI5MDYyNTE0MzY1M1owfTEcMBoGA1UECgwTTmVzc3VzIFVzZXJzIFVuaXRlZDEWMBQGA1UECwwNTmVzc3VzIFNlcnZlcjERMA8GA1UEBwwITmV3IFlvcmsxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJOWTEYMBYGA1UEAwwPREVTS1RPUC1LOUNKRlRHMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuasuf4szTGFwyXoX6c8oDpzCWPt3i8/cSGPpp8NwVV2QlZLHRNTaHo0Lxh3NyksfTBAi96SThR2hICSiAjCPyjnNxjrzBS7EfD9xnZPnybP4wtlx3Q5IrCDAsvmrnOA5v7+eX/urZHtb9dJsxHU5gzrt1OZkqzpDIR+A6VOnlqk9hM3kHzIEe7QDzOKeTUcTxj/3+8PmK7bUI83vWr0O9GDBxoy6vlPjUiVN69LjeR9qdRd1fRzDy4WLKh/4iSwCdwIlVNTNF+e8CG3SHEQWirL5EEHmTblN3SAANgV+cyvC9mBQPx0rLmKP4EzEHZJU80UhNnMOlvx9Y7ELZpSO3wIDAQABo3oweDARBglghkgBhvhCAQEEBAMCBkAwDgYDVR0PAQH/BAQDAgXgMB0GA1UdDgQWBBSTH0v/u+BIcMuKus6yaa7VnzFYLTAfBgNVHSMEGDAWgBSwJHQdVnEcyyLQoJfkbRMc+MutQjATBgNVHSUEDDAKBggrBgEFBQcDATANBgkqhkiG9w0BAQsFAAOCAQEAbjAfvNQyDIai97GBkcYw8iVKjcnNAfJmPUC3zNv8aTbZbZHOtjF1zsVEX5a7eWoQFREgW7Edgk3vQBUHvPFhvUglo4nsoTi93En2f4O1wvIQNMv6wIpSea1jeqYSC+J1wGDxr/lmgKktKRuvTRs76gX5XhD+qAcfWZVNgxA2tE3CMlBIgwICLy3tnjgVVoau5my0RH6uJQFf2yMhUrPpaCZv5uHyXg9Yn0h8mjN7m9c/1Dyb0IhtN6h5rtzp1mXQku+DoLrVxCBZ9kf6CHS6wIzbqaNt7f1Od3yqDPI9yyxm3Klh9g8aWPSuU2DNilS987hHLsG4sbyJa5dqzkoUwA==
+-----END CERTIFICATE-----"
+"11011","","","None","192.168.56.1","tcp","139","Microsoft Windows SMB Service Detection","A file / print sharing service is listening on the remote host.","The remote service understands the CIFS (Common Internet File System)
+or Server Message Block (SMB) protocol, used to provide shared access
+to files, printers, etc between nodes on a network.","n/a","","
+An SMB server is running on this port.
+"
+"11011","","","None","192.168.56.1","tcp","445","Microsoft Windows SMB Service Detection","A file / print sharing service is listening on the remote host.","The remote service understands the CIFS (Common Internet File System)
+or Server Message Block (SMB) protocol, used to provide shared access
+to files, printers, etc between nodes on a network.","n/a","","
+A CIFS server is running on this port.
+"
+"11936","","","None","192.168.56.1","tcp","0","OS Identification","It is possible to guess the remote operating system.","Using a combination of remote probes (e.g., TCP/IP, SMB, HTTP, NTP,
+SNMP, etc.), it is possible to guess the name of the remote operating
+system in use. It is also possible sometimes to guess the version of
+the operating system.","n/a","","
+Remote operating system : Windows 11
+Confidence level : 70
+Method : Misc
+
+ 
+The remote host is running Windows 11"
+"12053","","","None","192.168.56.1","tcp","0","Host Fully Qualified Domain Name (FQDN) Resolution","It was possible to resolve the name of the remote host.","Nessus was able to resolve the fully qualified domain name (FQDN) of
+the remote host.","n/a","","
+192.168.56.1 resolves as DESKTOP-K9CJFTG.
+"
+"14272","","","None","192.168.56.1","tcp","135","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 135/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","139","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 139/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","445","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 445/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","5040","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 5040/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","7680","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 7680/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","8080","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 8080/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","8834","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 8834/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","49664","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 49664/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","49665","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 49665/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","49668","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 49668/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","49669","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 49669/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","49672","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 49672/tcp was found to be open"
+"14272","","","None","192.168.56.1","tcp","49676","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 49676/tcp was found to be open"
+"14272","","","None","192.168.56.1","udp","137","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 137/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","138","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 138/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","500","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 500/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","1900","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 1900/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","4500","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 4500/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","5050","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 5050/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","5353","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 5353/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","5355","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 5355/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","50940","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 50940/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","50942","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 50942/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","50943","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 50943/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","50945","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 50945/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","52035","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 52035/udp was found to be open"
+"14272","","","None","192.168.56.1","udp","54563","Netstat Portscanner (SSH)","Remote open ports can be enumerated via SSH.","Nessus was able to run 'netstat' on the remote host to enumerate the
+open ports. If 'netstat' is not available, the plugin will attempt to use 'ss'.
+
+See the section 'plugins options' about configuring this plugin.
+
+Note: This plugin will run on Windows (using netstat.exe) in the
+event that the target being scanned is localhost.","n/a","https://en.wikipedia.org/wiki/Netstat","Port 54563/udp was found to be open"
+"19506","","","None","192.168.56.1","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
+scan itself :
+
+  - The version of the plugin set.
+  - The type of scanner (Nessus or Nessus Home).
+  - The version of the Nessus Engine.
+  - The port scanner(s) used.
+  - The port range scanned.
+  - The ping round trip time 
+  - Whether credentialed or third-party patch management
+    checks are possible.
+  - Whether the display of superseded patches is enabled
+  - The date of the scan.
+  - The duration of the scan.
+  - The number of hosts scanned in parallel.
+  - The number of checks done in parallel.","n/a","","Information about this scan : 
+
+Nessus version : 10.8.4
+Nessus build : 20028
+Plugin feed version : 202506260211
+Scanner edition used : Nessus Home
+Scanner OS : WINDOWS
+Scanner distribution : win-x86-64
+Scan type : Normal
+Scan name : My Basic Network Scan
+Scan policy used : Basic Network Scan
+Scanner IP : 192.168.56.1
+Ping RTT : Unavailable
+Thorough tests : no
+Experimental tests : no
+Scan for Unpatched Vulnerabilities : no
+Plugin debugging enabled : no
+Paranoia level : 1
+Report verbosity : 1
+Safe checks : yes
+Optimize the test : yes
+Credentialed checks : no
+Patch management checks : None
+Display superseded patches : yes (supersedence plugin did not launch)
+CGI scanning : disabled
+Web application tests : disabled
+Max hosts : 30
+Max checks : 4
+Recv timeout : 5
+Backports : None
+Allow post-scan editing : Yes
+Nessus Plugin Signature Checking : Enabled
+Audit File Signature Checking : Disabled
+Scan Start Date : 2025/6/26 21:41 India Standard Time (UTC +05:30)
+Scan duration : 1004 sec
+Scan for malware : no
+"
+"21643","","","None","192.168.56.1","tcp","8834","SSL Cipher Suites Supported","The remote service encrypts communications using SSL.","This plugin detects which SSL ciphers are supported by the remote
+service for encrypting communications.","n/a","https://www.openssl.org/docs/man1.0.2/man1/ciphers.html
+http://www.nessus.org/u?e17ffced","
+Here is the list of SSL ciphers supported by the remote server :
+Each group is reported per SSL Version.
+
+SSL Version : TLSv13
+  High Strength Ciphers (>= 112-bit key)
+
+    Name                          Code             KEX           Auth     Encryption             MAC
+    ----------------------        ----------       ---           ----     ---------------------  ---
+    TLS_AES_128_GCM_SHA256        0x13, 0x01       -             -        AES-GCM(128)           AEAD
+    TLS_AES_256_GCM_SHA384        0x13, 0x02       -             -        AES-GCM(256)           AEAD
+    TLS_CHACHA20_POLY1305_SHA256  0x13, 0x03       -             -        ChaCha20-Poly1305(256) AEAD
+
+
+SSL Version : TLSv12
+  High Strength Ciphers (>= 112-bit key)
+
+    Name                          Code             KEX           Auth     Encryption             MAC
+    ----------------------        ----------       ---           ----     ---------------------  ---
+    ECDHE-RSA-AES128-SHA256       0xC0, 0x2F       ECDH          RSA      AES-GCM(128)           SHA256
+    ECDHE-RSA-AES256-SHA384       0xC0, 0x30       ECDH          RSA      AES-GCM(256)           SHA384
+
+The fields above are :
+
+  {Tenable ciphername}
+  {Cipher ID code}
+  Kex={key exchange}
+  Auth={authentication}
+  Encrypt={symmetric encryption method}
+  MAC={message authentication code}
+  {export flag}
+"
+"22964","","","None","192.168.56.1","tcp","8080","Service Detection","The remote service could be identified.","Nessus was able to identify the remote service by its banner or by
+looking at the error message it sends when it receives an HTTP
+request.","n/a","","A web server is running on this port."
+"22964","","","None","192.168.56.1","tcp","8834","Service Detection","The remote service could be identified.","Nessus was able to identify the remote service by its banner or by
+looking at the error message it sends when it receives an HTTP
+request.","n/a","","A TLSv1.2 server answered on this port.
+"
+"22964","","","None","192.168.56.1","tcp","8834","Service Detection","The remote service could be identified.","Nessus was able to identify the remote service by its banner or by
+looking at the error message it sends when it receives an HTTP
+request.","n/a","","A web server is running on this port through TLSv1.2."
+"24260","","","None","192.168.56.1","tcp","8080","HyperText Transfer Protocol (HTTP) Information","Some information about the remote HTTP configuration can be extracted.","This test gives some information about the remote HTTP protocol - the
+version used, whether HTTP Keep-Alive is enabled, etc... 
+
+This test is informational only and does not denote any security
+problem.","n/a","","
+Response Code : HTTP/1.1 403 Forbidden
+
+Protocol version : HTTP/1.1
+HTTP/2 TLS Support: No
+HTTP/2 Cleartext Support: No
+SSL : no
+Keep-Alive : no
+Options allowed : (Not implemented)
+Headers :
+
+  Server: Jetty(12.0.17)
+  Date: Thu, 26 Jun 2025 16:13:20 GMT
+  Vary: Accept-Encoding
+  X-Content-Type-Options: nosniff
+  Content-Type: text/html;charset=utf-8
+  X-Hudson: 1.395
+  X-Jenkins: 2.492.3
+  X-Jenkins-Session: 1dee0800
+  Connection: close
+  
+Response Body :
+
+<html><head><meta http-equiv='refresh' content='1;url=/login?from=%2F'/><script id='redirect' data-redirect-url='/login?from=%2F' src='/static/1dee0800/scripts/redirect.js'></script></head><body style='background-color:white; color:white;'>
+Authentication required
+<!--
+-->
+
+</body></html>                                                                                                                                                                                                                                                                                                            "
+"24260","","","None","192.168.56.1","tcp","8834","HyperText Transfer Protocol (HTTP) Information","Some information about the remote HTTP configuration can be extracted.","This test gives some information about the remote HTTP protocol - the
+version used, whether HTTP Keep-Alive is enabled, etc... 
+
+This test is informational only and does not denote any security
+problem.","n/a","","
+Response Code : HTTP/1.1 200 OK
+
+Protocol version : HTTP/1.1
+HTTP/2 TLS Support: No
+HTTP/2 Cleartext Support: No
+SSL : yes
+Keep-Alive : no
+Options allowed : (Not implemented)
+Headers :
+
+  Cache-Control: must-revalidate
+  X-Frame-Options: DENY
+  Content-Type: text/html
+  ETag: 648f9856fb742fd1ad80a4e90e544995
+  Connection: close
+  X-XSS-Protection: 1; mode=block
+  Server: NessusWWW
+  Date: Thu, 26 Jun 2025 16:13:20 GMT
+  X-Content-Type-Options: nosniff
+  Content-Length: 1217
+  Content-Security-Policy: upgrade-insecure-requests; block-all-mixed-content; form-action 'self'; frame-ancestors 'none'; frame-src https://store.tenable.com; default-src 'self'; connect-src 'self' www.tenable.com; script-src 'self' www.tenable.com; img-src 'self' data:; style-src 'self' www.tenable.com; object-src 'none'; base-uri 'self';
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Expect-CT: max-age=0
+  
+Response Body :
+
+<!doctype html>
+<html lang=""en"">
+    <head>
+        <meta http-equiv=""X-UA-Compatible"" content=""IE=edge,chrome=1"" />
+        <meta http-equiv=""Content-Security-Policy"" content=""upgrade-insecure-requests; block-all-mixed-content; form-action 'self'; frame-src https://store.tenable.com; default-src 'self'; connect-src 'self' www.tenable.com; script-src 'self' www.tenable.com; img-src 'self' data:; style-src 'self' www.tenable.com; object-src 'none'; base-uri 'self';"" />
+        <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
+        <meta charset=""utf-8"" />
+        <title>Nessus</title>
+        <link rel=""stylesheet"" href=""nessus6.css?v=1744138425399"" id=""theme-link"" />
+        <link rel=""stylesheet"" href=""tenable_links.css?v=ac05d80f1e3731b79d12103cdf9367fc"" />
+        <link rel=""stylesheet"" href=""wizard_templates.css?v=0e2ae10949ed6782467b3810ccce69c5"" />
+        <!--[if lt IE 11]>
+            <script>
+                window.location = '/unsupported6.html';
+            </script>
+        <![endif]-->
+        <script src=""nessus6.js?v=1744138425399""></script>
+        <script src=""pendo-client.js""></script>
+        <!--Resource-Script-->
+    </head>
+    <body>
+    </body>
+</html>
+"
+"42410","","","None","192.168.56.1","tcp","445","Microsoft Windows NTLMSSP Authentication Request Remote Network Name Disclosure","It is possible to obtain the network name of the remote host.","The remote host listens on tcp port 445 and replies to SMB requests.
+
+By sending an NTLMSSP authentication request it is possible to obtain
+the name of the remote system and the name of its domain.","n/a","","The following 2 NetBIOS names have been gathered :
+
+ DESKTOP-K9CJFTG  = Computer name
+ DESKTOP-K9CJFTG  = Workgroup / Domain name
+"
+"42822","","","None","192.168.56.1","tcp","8834","Strict Transport Security (STS) Detection","The remote web server implements Strict Transport Security.","The remote web server implements Strict Transport Security (STS).
+The goal of STS is to make sure that a user does not accidentally
+downgrade the security of his or her browser.
+
+All unencrypted HTTP connections are redirected to HTTPS.  The browser
+is expected to treat all cookies as 'secure' and to close the
+connection in the event of potentially insecure situations.","n/a","http://www.nessus.org/u?2fb3aca6","
+The STS header line is :
+
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+"
+"45590","","","None","192.168.56.1","tcp","0","Common Platform Enumeration (CPE)","It was possible to enumerate CPE names that matched on the remote
+system.","By using information obtained from a Nessus scan, this plugin reports
+CPE (Common Platform Enumeration) matches for various hardware and
+software products found on a host. 
+
+Note that if an official CPE is not available for the product, this
+plugin computes the best possible CPE based on the information
+available from the scan.","n/a","http://cpe.mitre.org/
+https://nvd.nist.gov/products/cpe","
+The remote operating system matched the following CPE : 
+
+  cpe:/o:microsoft:windows -> Microsoft Windows
+
+Following application CPE's matched on the remote system : 
+
+  cpe:/a:eclipse:jetty:12.0.17 -> Eclipse Jetty
+  cpe:/a:tenable:nessus -> Tenable Nessus
+"
+"51192","","6.4","Medium","192.168.56.1","tcp","8834","SSL Certificate Cannot Be Trusted","The SSL certificate for this service cannot be trusted.","The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.","Purchase or generate a proper SSL certificate for this service.","https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : O=Nessus Users United/OU=Nessus Server/L=New York/C=US/ST=NY/CN=DESKTOP-K9CJFTG
+|-Issuer  : O=Nessus Users United/OU=Nessus Certification Authority/L=New York/C=US/ST=NY/CN=Nessus Certification Authority
+"
+"54615","","","None","192.168.56.1","tcp","0","Device Type","It is possible to guess the remote device type.","Based on the remote operating system, it is possible to determine
+what the remote system type is (eg: a printer, router, general-purpose
+computer, etc).","n/a","","Remote device type : general-purpose
+Confidence level : 70
+"
+"56984","","","None","192.168.56.1","tcp","8834","SSL / TLS Versions Supported","The remote service encrypts communications.","This plugin detects which SSL and TLS versions are supported by the
+remote service for encrypting communications.","n/a","","
+This port supports TLSv1.3/TLSv1.2.
+"
+"57041","","","None","192.168.56.1","tcp","8834","SSL Perfect Forward Secrecy Cipher Suites Supported","The remote service supports the use of SSL Perfect Forward Secrecy
+ciphers, which maintain confidentiality even if the key is stolen.","The remote host supports the use of SSL ciphers that offer Perfect
+Forward Secrecy (PFS) encryption.  These cipher suites ensure that
+recorded SSL traffic cannot be broken at a future date if the server's
+private key is compromised.","n/a","https://www.openssl.org/docs/manmaster/man1/ciphers.html
+https://en.wikipedia.org/wiki/Diffie-Hellman_key_exchange
+https://en.wikipedia.org/wiki/Perfect_forward_secrecy","
+Here is the list of SSL PFS ciphers supported by the remote server :
+
+  High Strength Ciphers (>= 112-bit key)
+
+    Name                          Code             KEX           Auth     Encryption             MAC
+    ----------------------        ----------       ---           ----     ---------------------  ---
+    ECDHE-RSA-AES128-SHA256       0xC0, 0x2F       ECDH          RSA      AES-GCM(128)           SHA256
+    ECDHE-RSA-AES256-SHA384       0xC0, 0x30       ECDH          RSA      AES-GCM(256)           SHA384
+
+The fields above are :
+
+  {Tenable ciphername}
+  {Cipher ID code}
+  Kex={key exchange}
+  Auth={authentication}
+  Encrypt={symmetric encryption method}
+  MAC={message authentication code}
+  {export flag}
+"
+"57608","","5.0","Medium","192.168.56.1","tcp","445","SMB Signing not required","Signing is not required on the remote SMB server.","Signing is not required on the remote SMB server. An unauthenticated,
+remote attacker can exploit this to conduct man-in-the-middle attacks
+against the SMB server.","Enforce message signing in the host's configuration. On Windows, this
+is found in the policy setting 'Microsoft network server: Digitally
+sign communications (always)'. On Samba, the setting is called 'server
+signing'. See the 'see also' links for further details.","http://www.nessus.org/u?df39b8b3
+http://technet.microsoft.com/en-us/library/cc731957.aspx
+http://www.nessus.org/u?74b80723
+https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html
+http://www.nessus.org/u?a3cac4ea",""
+"64582","","","None","192.168.56.1","tcp","0","Netstat Connection Information","Nessus was able to parse the results of the 'netstat' command on the
+remote host.","The remote host has listening ports or established connections that
+Nessus was able to extract from the results of the 'netstat' command.
+
+Note: The output for this plugin can be very long, and is not shown by default. To display it, enable verbose reporting in scan settings.","n/a","",""
+"97993","","","None","192.168.56.1","tcp","0","OS Identification and Installed Software Enumeration over SSH v2 (Using New SSH Library)","Information about the remote host can be disclosed via an
+authenticated session.","Nessus was able to login to the remote host using SSH or local
+commands and extract the list of installed packages.","n/a","","
+Nessus can run commands on localhost to check if patches are applied.
+
+Credentialed checks of Windows are not supported using SSH.
+
+The remote host is not currently supported by this plugin.
+
+Runtime : 1.77943 seconds
+"
+"100669","","","None","192.168.56.1","tcp","8080","Web Application Cookies Are Expired","HTTP cookies have an 'Expires' attribute that is set with a past date
+or time.","The remote web application sets various cookies throughout a user's
+unauthenticated and authenticated session. However, Nessus has
+detected that one or more of the cookies have an 'Expires' attribute
+that is set with a past date or time, meaning that these cookies will
+be removed by the browser.","Each cookie should be carefully reviewed to determine if it contains
+sensitive data or is relied upon for a security decision.
+
+If needed, set an expiration date in the future so the cookie will
+persist or remove the Expires cookie attribute altogether to convert
+the cookie to a session cookie.","https://tools.ietf.org/html/rfc6265","
+The following cookie is expired :
+
+Name : remember-me
+Path : /
+Value : 
+Domain : 
+Version : 1
+Expires : Thu, 01 Jan 1970 00:00:00 GMT
+Comment : 
+Secure : 0
+Httponly : 1
+Port : 
+
+"
+"100669","","","None","192.168.56.1","tcp","8834","Web Application Cookies Are Expired","HTTP cookies have an 'Expires' attribute that is set with a past date
+or time.","The remote web application sets various cookies throughout a user's
+unauthenticated and authenticated session. However, Nessus has
+detected that one or more of the cookies have an 'Expires' attribute
+that is set with a past date or time, meaning that these cookies will
+be removed by the browser.","Each cookie should be carefully reviewed to determine if it contains
+sensitive data or is relied upon for a security decision.
+
+If needed, set an expiration date in the future so the cookie will
+persist or remove the Expires cookie attribute altogether to convert
+the cookie to a session cookie.","https://tools.ietf.org/html/rfc6265","
+The following cookie is expired :
+
+Name : remember-me
+Path : /
+Value : 
+Domain : 
+Version : 1
+Expires : Thu, 01 Jan 1970 00:00:00 GMT
+Comment : 
+Secure : 0
+Httponly : 1
+Port : 
+
+"
+"100871","","","None","192.168.56.1","tcp","445","Microsoft Windows SMB Versions Supported (remote check)","It was possible to obtain information about the version of SMB running
+on the remote host.","Nessus was able to obtain the version of SMB running on the remote
+host by sending an authentication request to port 139 or 445.
+
+Note that this plugin is a remote check and does not work on agents.","n/a","","
+The remote host supports the following versions of SMB :
+  SMBv2
+"
+"106716","","","None","192.168.56.1","tcp","445","Microsoft Windows SMB2 and SMB3 Dialects Supported (remote check)","It was possible to obtain information about the dialects of SMB2 and SMB3 available
+on the remote host.","Nessus was able to obtain the set of SMB2 and SMB3 dialects running on the remote
+host by sending an authentication request to port 139 or 445.","n/a","","
+The remote host supports the following SMB dialects :
+	_version_  _introduced in windows version_
+	2.0.2      Windows 2008  
+	2.1        Windows 7     
+	3.0        Windows 8     
+	3.0.2      Windows 8.1   
+	3.1.1      Windows 10    
+
+The remote host does NOT support the following SMB dialects :
+	_version_  _introduced in windows version_
+	2.2.2      Windows 8 Beta
+	2.2.4      Windows 8 Beta
+	3.1        Windows 10    
+"
+"110723","","","None","192.168.56.1","tcp","0","Target Credential Status by Authentication Protocol - No Credentials Provided","Nessus was able to find common ports used for local checks,
+however, no credentials were provided in the scan policy.","Nessus was not able to successfully authenticate directly to the
+remote target on an available authentication protocol. Nessus was
+able to connect to the remote port and identify that the service
+running on the port supports an authentication protocol, but Nessus
+failed to authenticate to the remote service using the provided
+credentials. There may have been a protocol failure that prevented
+authentication from being attempted or all of the provided credentials
+for the authentication protocol may be invalid. See plugin output for
+error details.
+
+Please note the following :
+
+- This plugin reports per protocol, so it is possible for
+  valid credentials to be provided for one protocol and not
+  another. For example, authentication may succeed via SSH
+  but fail via SMB, while no credentials were provided for
+  an available SNMP service.
+
+- Providing valid credentials for all available
+  authentication protocols may improve scan coverage, but
+  the value of successful authentication for a given
+  protocol may vary from target to target depending upon
+  what data (if any) is gathered from the target via that
+  protocol. For example, successful authentication via SSH
+  is more valuable for Linux targets than for Windows
+  targets, and likewise successful authentication via SMB
+  is more valuable for Windows targets than for Linux
+  targets.","n/a","","SMB was detected on port 445 but no credentials were provided.
+SMB local checks were not enabled.
+
+"
+"117886","","","None","192.168.56.1","tcp","0","OS Security Patch Assessment Not Available","OS Security Patch Assessment is not available.","OS Security Patch Assessment is not available on the remote host.
+This does not necessarily indicate a problem with the scan.
+Credentials may not have been provided, OS security patch assessment
+may not be supported for the target, the target may not have been
+identified, or another issue may have occurred that prevented OS
+security patch assessment from being available. See plugin output for
+details.
+
+This plugin reports non-failure information impacting the availability
+of OS Security Patch Assessment. Failure information is reported by
+plugin 21745 : 'OS Security Patch Assessment failed'.  If a target
+host is not supported for OS Security Patch Assessment, plugin
+110695 : 'OS Security Patch Assessment Checks Not Supported' will
+report concurrently with this plugin.","n/a","","
+The following issues were reported :
+
+  - Plugin      : ssh_get_info2.nasl
+    Plugin ID   : 97993
+    Plugin Name : OS Identification and Installed Software Enumeration over SSH v2 (Using New SSH Library)
+    Protocol    : LOCALHOST
+    Message     : 
+Credentialed checks of Windows are not supported using SSH.
+
+  - Plugin      : no_local_checks_credentials.nasl
+    Plugin ID   : 110723
+    Plugin Name : Target Credential Status by Authentication Protocol - No Credentials Provided
+    Message     : 
+Credentials were not provided for detected SMB service.
+"
+"135860","","","None","192.168.56.1","tcp","445","WMI Not Available","WMI queries could not be made against the remote host.","WMI (Windows Management Instrumentation) is not available on the
+remote host over DCOM. WMI queries are used to gather information
+about the remote host, such as its current state, network interface
+configuration, etc.
+
+Without this information Nessus may not be able to identify installed
+software or security vunerabilities that exist on the remote host.","n/a","https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page","Can't connect to the 'root\CIMV2' WMI namespace."
+"136318","","","None","192.168.56.1","tcp","8834","TLS Version 1.2 Protocol Detection","The remote service encrypts traffic using a version of TLS.","The remote service accepts connections encrypted using TLS 1.2.","N/A","https://tools.ietf.org/html/rfc5246","TLSv1.2 is enabled and the server supports at least one cipher."
+"138330","","","None","192.168.56.1","tcp","8834","TLS Version 1.3 Protocol Detection","The remote service encrypts traffic using a version of TLS.","The remote service accepts connections encrypted using TLS 1.3.","N/A","https://tools.ietf.org/html/rfc8446","TLSv1.3 is enabled and the server supports at least one cipher."
+"194915","","","None","192.168.56.1","tcp","0","Eclipse Jetty Web Server Detection","The Eclipse Jetty web server was detected on the remote host.","The Eclipse Jetty web server was detected on the remote host.","n/a","https://eclipse.dev/jetty/","
+  URL     : http://DESKTOP-K9CJFTG:8080/
+  Version : 12.0.17
+  Source  : Server: Jetty(12.0.17)
+"
+"209654","","","None","192.168.56.1","tcp","0","OS Fingerprints Detected","Multiple OS fingerprints were detected.","Using a combination of remote probes (TCP/IP, SMB, HTTP, NTP, SNMP, etc), 
+it was possible to gather one or more fingerprints from the remote system. 
+While the highest-confidence result was reported in plugin 11936, “OS Identification”, 
+the complete set of fingerprints detected are reported here.","n/a","","
+Following OS Fingerprints were found
+
+Remote operating system : Windows 11
+Confidence level : 70
+Method : Misc
+Type : general-purpose
+Fingerprint : unknown
+
+Following fingerprints could not be used to determine OS : 
+ HTTP:!:Server: NessusWWW
+
+SSLcert:!:i/CN:Nessus Certification Authorityi/O:Nessus Users Unitedi/OU:Nessus Certification Authoritys/CN:DESKTOP-K9CJFTGs/O:Nessus Users Uniteds/OU:Nessus Server
+5d8865cdf113dfe040b0cda71b8e282fc504f208
+
+"
