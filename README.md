@@ -2,7 +2,7 @@
 
 ## 🧾 Overview
 
-This project demonstrates a basic vulnerability assessment of a personal computer using a free vulnerability scanner (Nessus Essentials or OpenVAS). The goal is to identify potential security weaknesses, analyze the scan report, and document the most critical issues with their possible fixes.
+This project demonstrates a basic vulnerability assessment of a personal computer using a free vulnerability scanner(Nessus). The goal is to identify potential security weaknesses, analyze the scan report, and document the most critical issues with their possible fixes.
 
 ---
 
@@ -24,7 +24,7 @@ To identify potential vulnerabilities on a personal computer using a free vulner
    Installed Nessus Essentials / OpenVAS on the local machine.
 
 2. **Setup Scan Target**  
-   Configured the target IP as `123.123.123.123` or local IP (e.g., `192.168.x.x`).
+   Configured the target IP as  `192.168.56.1` (local), and `123.123.123.123` (external test host).
 
 3. **Launch Full Scan**  
    Started a full vulnerability scan, which took approximately 30–60 minutes.
@@ -36,13 +36,14 @@ To identify potential vulnerabilities on a personal computer using a free vulner
    Researched recommended solutions for each vulnerability using CVE references.
 
 6. **Documentation**  
-   Screenshots and key findings are documented in the `/report` folder.
+   Reports and screenshots are saved in the `/screenshots` directories.
 
 ---
 
 ## 📄 Deliverables
 
-- ✅ Scan Report (HTML)
+- ✅ HTML report for external host `123.123.123.123`
+- ✅ CSV report for local host `192.168.56.1`
 - ✅ Screenshots of Scan Results
 - ✅ Summary of Critical Vulnerabilities
 - ✅ Suggested Fixes / Mitigations
@@ -53,17 +54,16 @@ To identify potential vulnerabilities on a personal computer using a free vulner
 
 > Screenshots of the scan interface, summary, and critical vulnerabilities can be found in the `/screenshots` directory.
 
+
 ---
 
 ## ✅ Conclusion
 
-The vulnerability scan successfully identified multiple security risks on the system. A separate target was also scanned to further understand real-world vulnerabilities. The findings highlighted the importance of regular scanning and timely software updates in maintaining system security.
+The vulnerability scan successfully identified multiple security risks on the system. A separate external IP (`123.123.123.123`) was also scanned to explore additional real-world vulnerabilities. The results emphasize the importance of regular vulnerability scanning and keeping systems updated to maintain strong security.
 
 ---
 
 ## 🔐 Disclaimer
 
 This project was conducted for **educational purposes only** on personal and authorized systems. Unauthorized scanning or exploitation of systems is illegal and unethical.
-
-
 
